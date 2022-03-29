@@ -1,0 +1,6 @@
+{
+    "name": "User Name",
+    "role": "",
+    "musics": ["artist-title"],
+    "likes": { "artist-title": true }
+}

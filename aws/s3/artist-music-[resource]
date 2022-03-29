@@ -1,0 +1,14 @@
+The resource can be:
+* lyrics
+* music sheet
+* free notes
+* external links
+* etc.
+
+The content is in this format:
+
+mdi-icon
+#$#
+title
+#$#
+content
