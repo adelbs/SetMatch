@@ -64,6 +64,8 @@
 
 import axios from 'axios';
 
+import { API_ENDPOINT, API_KEY } from '../commons';
+
 export default {
     name: 'Login',
     data: () => ({
@@ -96,7 +98,7 @@ export default {
         else {
             axios({
                 method: 'GET',
-                url: `https://em9qllw72g.execute-api.us-east-1.amazonaws.com/v1`
+                url: API_ENDPOINT
             }).then(response => {
                 this.bands = response.data;
             }).catch(error => {
@@ -116,7 +118,8 @@ export default {
             this.$store.commit('loading', true);
             axios({
                 method: 'POST',
-                url: `https://em9qllw72g.execute-api.us-east-1.amazonaws.com/v1/${this.band}/member/${this.phone}`,
+                url: `${API_ENDPOINT}${this.band}/member/${this.phone}`,
+                headers: { 'x-api-key': `${API_KEY}${this.secret}` },
                 data: {
                     kind: this.kind,
                     secret: this.secret,

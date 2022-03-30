@@ -1,7 +1,8 @@
 import axios from 'axios';
 import store from './store';
 
-const API_ENDPOINT = 'https://[API-ID].execute-api.[REGION].amazonaws.com/v1/';
+export const API_ENDPOINT = 'https://[API-ID].execute-api.[REGION].amazonaws.com/v1/';
+export const API_KEY = 'xyxyxyxyxyxyxyxyxy-'
 
 export async function update() {
 
@@ -10,7 +11,8 @@ export async function update() {
     try {
         let response = await axios({
             method: 'GET',
-            url: `${API_ENDPOINT}${store.state.me.band}/member`
+            url: `${API_ENDPOINT}${store.state.me.band}/member`,
+            headers: { 'x-api-key': `${API_KEY}${store.state.me.secret}` },
         });
 
         store.commit('resetMembers');
@@ -19,7 +21,8 @@ export async function update() {
         for (let i = 0; i < members.length; i++) {
             response = await axios({
                 method: 'GET',
-                url: `${API_ENDPOINT}${store.state.me.band}/member/${members[i]}`
+                url: `${API_ENDPOINT}${store.state.me.band}/member/${members[i]}`,
+                headers: { 'x-api-key': `${API_KEY}${store.state.me.secret}` },
             });
 
             store.commit('pushMember', response.data);
@@ -56,6 +59,7 @@ export function saveme(dontAlert) {
     axios({
         method: 'POST',
         url: `${API_ENDPOINT}${store.getters.me.band}/member/${store.getters.me.phone}`,
+        headers: { 'x-api-key': `${API_KEY}${store.state.me.secret}` },
         data: {
             kind: 2,
             secret: store.getters.me.secret,
@@ -86,7 +90,8 @@ export async function getResource(key) {
     try {
         result = await axios({
             method: 'GET',
-            url: `${API_ENDPOINT}${store.getters.me.band}/music/${key}`
+            url: `${API_ENDPOINT}${store.getters.me.band}/music/${key}`,
+            headers: { 'x-api-key': `${API_KEY}${store.state.me.secret}` },
         });
 
         result = result.data;
@@ -107,6 +112,7 @@ export function saveResource(key, data) {
     axios({
         method: 'POST',
         url: `${API_ENDPOINT}${store.getters.me.band}/music/${key}`,
+        headers: { 'x-api-key': `${API_KEY}${store.state.me.secret}` },
         data
     })
         .then(response => {
