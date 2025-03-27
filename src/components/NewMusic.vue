@@ -5,20 +5,20 @@
     >
         <v-card>
             <v-card-title>
-                Add Music...
+                Adicionar música...
             </v-card-title>
 
             <v-card-text>
                 <v-text-field
                     v-model="newMusic.artist"
-                    label="Artist"
+                    label="Artista/Banda"
                 ></v-text-field>
                 <v-text-field
                     v-model="newMusic.title"
-                    label="Title"
+                    label="Música"
                 ></v-text-field>
                 <div class="mt-3">
-                    You can add more details later.
+                    Depois você poderá adicionar mais informações.
                 </div>
             </v-card-text>
 
@@ -30,14 +30,14 @@
                     text
                     @click="show = false"
                 >
-                    Cancel
+                    Cancelar
                 </v-btn>
                 <v-btn
                     color="primary"
                     text
                     @click="saveMusic"
                 >
-                    Save
+                    Salvar
                 </v-btn>
             </v-card-actions>
         </v-card>
@@ -80,8 +80,8 @@ export default {
             }
             else {
                 this.$store.commit('dialog', {
-                    title: 'Something wrong...',
-                    text: `Please, check the information and try again. <li>You cannot add a duplicated music.</li><li>All fields are mandatory.</li>`,
+                    title: 'Não deu pra salvar...',
+                    text: `Verifica as informações e tenta de novo. <li>Não pode adicionar uma música duplicada.</li><li>Todos os campos são obrigatórios.</li>`,
                     show: true
                 });
             }

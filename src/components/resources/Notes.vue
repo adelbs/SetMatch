@@ -5,13 +5,13 @@
         width="500"
     >
         <v-card :loading="$store.state.loading || $store.state.bgLoading">
-            <v-card-title>Notes</v-card-title>
+            <v-card-title>Notas</v-card-title>
             <v-card-text>
                 <v-textarea
                     :disabled="$store.state.loading || $store.state.bgLoading"
                     v-model="notes"
                     auto-grow
-                    placeholder="Write whatever you want"
+                    placeholder="Escreve qualquer coisa aqui..."
                 ></v-textarea>
             </v-card-text>
             <v-divider></v-divider>
@@ -21,7 +21,7 @@
                     text
                     @click="show = false"
                 >
-                    Cancel
+                    Cancelar
                 </v-btn>
                 <v-btn
                     :disabled="$store.state.loading || $store.state.bgLoading"
@@ -29,7 +29,7 @@
                     text
                     @click="save"
                 >
-                    Save
+                    Salvar
                 </v-btn>
             </v-card-actions>
         </v-card>

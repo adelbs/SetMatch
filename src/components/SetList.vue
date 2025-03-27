@@ -7,7 +7,7 @@
         <v-card :loading="$store.state.loading || $store.state.bgLoading">
             <v-card-title>SetList...</v-card-title>
             <v-card-text>
-                It's not implemented yet... the SetList will be here soon...
+                Não implementado ainda... Um dia arrumo tempo pra isso...
             </v-card-text>
             <v-divider></v-divider>
             <v-card-actions>
@@ -17,7 +17,7 @@
                     text
                     @click="show = false"
                 >
-                    Close
+                    Fechar
                 </v-btn>
             </v-card-actions>
         </v-card>

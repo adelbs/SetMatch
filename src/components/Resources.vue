@@ -28,7 +28,7 @@
                             <v-icon>mdi-cancel</v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
-                            <v-list-item-title>Nevermind...</v-list-item-title>
+                            <v-list-item-title>Fechar</v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
                 </v-list>
@@ -80,13 +80,13 @@ export default {
         },
         menuMore() {
             const menu = [
-                { icon: 'mdi-text', caption: 'Notes', resource: 'notes' },
+                { icon: 'mdi-text', caption: 'Notas', resource: 'notes' },
                 { icon: 'mdi-link', caption: 'Links', resource: 'links' },
-                { icon: 'mdi-microphone-variant', caption: 'Lyrics', resource: 'lyrics' },
+                { icon: 'mdi-microphone-variant', caption: 'Letras', resource: 'lyrics' },
             ];
 
             if (this.$store.getters.me.musics.find(item => item == this.musicKey))
-                menu.push({ icon: 'mdi-delete', caption: `Delete this shit`, resource: 'delete' });
+                menu.push({ icon: 'mdi-delete', caption: `Remover essa música`, resource: 'delete' });
 
             return menu;
         }

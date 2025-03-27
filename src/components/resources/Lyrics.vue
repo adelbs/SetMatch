@@ -12,7 +12,7 @@
                     :disabled="$store.state.loading || $store.state.bgLoading"
                     auto-grow
                     v-model="lyric"
-                    placeholder="Write the lyric here"
+                    placeholder="Escreve a letra aqui..."
                 ></v-textarea>
                 <div
                     v-else
@@ -49,7 +49,7 @@
                     text
                     @click="save"
                 >
-                    Save
+                    Salvar
                 </v-btn>
                 <v-btn
                     v-if="!editing"
@@ -58,13 +58,13 @@
                     text
                     @click="editing = true"
                 >
-                    Edit
+                    Editar
                 </v-btn>
                 <v-btn
                     text
                     @click="show = false"
                 >
-                    Close
+                    Fechar
                 </v-btn>
 
             </v-card-actions>
@@ -91,7 +91,7 @@ export default {
             set(value) { this.$emit('input', value); }
         },
         formattedLyric() {
-            let result = `There is no Lyric saved here yet.`;
+            let result = `Nenhuma letra salva ainda...`;
 
             if (this.lyric) {
                 result = this.lyric;

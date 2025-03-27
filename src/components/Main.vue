@@ -16,7 +16,7 @@
                     width="100%"
                     max-width="450"
                     class="ma-2"
-                    :color="music.match ? 'yellow lighten-5' : ''"
+                    :color="music.match ? 'yellow lighten-2' : ''"
                 >
                     <v-card-title>
                         {{ music.artist }}
@@ -34,7 +34,7 @@
                             <v-icon>mdi-dots-vertical</v-icon>
                         </v-btn>
                         <v-spacer></v-spacer>
-                        <div v-if="music.match">It's a Match!</div>
+                        <div v-if="music.match">Deu Match!</div>
                         <v-spacer></v-spacer>
                         <div class="caption mr-2">{{ music.likes }} likes</div>
 

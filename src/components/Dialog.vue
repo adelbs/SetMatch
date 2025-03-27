@@ -20,7 +20,7 @@
                     text
                     @click="show = false"
                 >
-                    Got it
+                    Ok
                 </v-btn>
             </v-card-actions>
         </v-card>

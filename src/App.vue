@@ -6,7 +6,7 @@
             <Dialog></Dialog>
             <Loading
                 :show="$store.state.loading"
-                text="Just wait..."
+                text="Pera ai..."
             ></Loading>
 
             <Login v-if="!$store.state.me.phone"></Login>

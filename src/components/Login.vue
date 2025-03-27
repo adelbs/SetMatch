@@ -5,32 +5,32 @@
             v-if="!$store.state.loading"
         >
             <v-card width="400">
-                <v-card-title>Hey, identify yourself...</v-card-title>
+                <v-card-title>Epa, quem é você?</v-card-title>
                 <v-card-text>
                     <v-select
-                        label="Your band"
+                        label="Sua banda"
                         v-model="band"
                         :items="bands"
                     ></v-select>
                     <v-text-field
                         v-model="phone"
-                        label="Your phone"
+                        label="Seu celular"
                     ></v-text-field>
                     <v-text-field
                         v-model="secret"
-                        label="Band secret"
+                        label="Senha da banda"
                     ></v-text-field>
 
                     <v-fade-transition hide-on-leave>
                         <div v-if="kind == 1">
                             <v-text-field
                                 v-model="name"
-                                label="Your name"
+                                label="Seu nome"
                             ></v-text-field>
                             <v-select
                                 v-model="role"
                                 :items="roles"
-                                label="Role"
+                                label="O que você faz na banda?"
                             ></v-select>
                         </div>
                     </v-fade-transition>
@@ -40,13 +40,13 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
 
-                    <v-btn
+                    <!-- <v-btn
                         text
                         color="secondary"
                         @click="!kind ? kind = 1 : kind = 0"
                     >
                         {{ btnNewLabel }}
-                    </v-btn>
+                    </v-btn> -->
                     <v-btn
                         text
                         color="primary"
@@ -78,14 +78,14 @@ export default {
         role: '',
 
         bands: [],
-        roles: ['Drum', 'Guitar', 'Bass', 'Sing', 'Keyboard', 'Groupie']
+        roles: ['Batera', 'Guitarra', 'Baixo', 'Vocal', 'Teclado', 'Groupie']
     }),
     computed: {
         btnNewLabel() {
-            return this.kind == 0 ? `I'm new here...` : 'Cancel';
+            return this.kind == 0 ? `Minha primeira vez aqui...` : 'Cancela';
         },
         btnLoginLabel() {
-            return this.kind == 0 ? `Let's go` : 'Create new account';
+            return this.kind == 0 ? `Bora` : 'Criar conta nova';
         }
     },
     mounted() {
@@ -104,7 +104,7 @@ export default {
             }).catch(error => {
                 console.log(error);
                 this.$store.commit('dialog', {
-                    title: `ops, there's something wrong...`,
+                    title: `Opa, deu ruim...`,
                     text: error,
                     show: true
                 });
@@ -138,8 +138,8 @@ export default {
                 });
             }).catch(error => {
                 this.$store.commit('dialog', {
-                    title: `ops, wrong...`,
-                    text: `Wrong information. Have questions? Talk to your band's admin.`,
+                    title: `Opa, deu ruim...`,
+                    text: `Parece que você informou algo errado. Na dúvida chama o admin da sua banda...`,
                     show: true
                 });
 

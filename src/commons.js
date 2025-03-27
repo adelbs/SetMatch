@@ -1,8 +1,8 @@
 import axios from 'axios';
 import store from './store';
 
-export const API_ENDPOINT = 'https://[API-ID].execute-api.[REGION].amazonaws.com/v1/';
-export const API_KEY = 'xyxyxyxyxyxyxyxyxy-'
+export const API_ENDPOINT = 'https://[api]';
+export const API_KEY = '[key]-'
 
 export async function update() {
 
@@ -43,7 +43,7 @@ export async function update() {
     catch (error) {
         console.log(error);
         store.commit('dialog', {
-            title: `ops, something went wrong...`,
+            title: `Opa, deu ruim...`,
             text: error,
             show: true
         });
@@ -70,12 +70,12 @@ export function saveme(dontAlert) {
         }
     })
         .then(response => {
-            if (!dontAlert) store.commit('alert', { type: 'success', message: 'Music Saved!' });
+            if (!dontAlert) store.commit('alert', { type: 'success', message: 'Música Salva!' });
         })
         .catch(error => {
             console.log(error);
             store.commit('dialog', {
-                title: `ops, something went wrong...`,
+                title: `Opa, deu ruim...`,
                 text: error,
                 show: true
             });
@@ -116,12 +116,12 @@ export function saveResource(key, data) {
         data
     })
         .then(response => {
-            store.commit('alert', { type: 'success', message: 'Music Saved!' });
+            store.commit('alert', { type: 'success', message: 'Música Salva!' });
         })
         .catch(error => {
             console.log(error);
             store.commit('dialog', {
-                title: `ops, something went wrong...`,
+                title: `Opa, deu ruim...`,
                 text: error,
                 show: true
             });
@@ -157,12 +157,12 @@ export function sortMusics(a, b) {
     const sortBy = store.getters.filter.sortBy;
     let result = 0;
 
-    if (sortBy == 'Artist') {
+    if (sortBy == 'Artista/Banda') {
         if (a.artist > b.artist) result = 1;
         else if (a.artist < b.artist) result = -1;
         else result = 0;
     }
-    else if (sortBy == 'Title') {
+    else if (sortBy == 'Música') {
         if (a.title > b.title) result = 1;
         else if (a.title < b.title) result = -1;
         else result = 0;

@@ -31,7 +31,7 @@ export default new Vuex.Store({
             showOnlyUnvoted: false,
             showOnlyMatched: false,
             showOnlyMyMusics: false,
-            sortBy: 'Default'
+            sortBy: 'Padrão'
         },
         members: []
     },
@@ -90,7 +90,7 @@ export default new Vuex.Store({
                 showOnlyUnvoted: false,
                 showOnlyMatched: false,
                 showOnlyMyMusics: false,
-                sortBy: 'Default'
+                sortBy: 'Padrão'
             };
         }
     }

@@ -5,36 +5,36 @@
     >
         <v-card>
             <v-card-title>
-                Filter
+                Filtros
             </v-card-title>
 
             <v-card-text>
                 <v-switch
                     dense
                     v-model="hideThumbsDown"
-                    label="Hide my thumbs down"
+                    label="Esconder músicas descurtidas"
                 ></v-switch>
                 <v-switch
                     dense
                     v-model="showOnlyUnvoted"
-                    label="Show only unvoted musics"
+                    label="Exibir apenas músicas não votadas"
                 ></v-switch>
                 <v-switch
                     dense
                     v-model="showOnlyMatched"
-                    label="Show only matched musics"
+                    label="Exibir apenas músicas que deram Match"
                 ></v-switch>
                 <v-switch
                     dense
                     v-model="showOnlyMyMusics"
-                    label="Show only my musics"
+                    label="Mostrar músicas que eu adicionei"
                 ></v-switch>
                 <v-divider></v-divider>
                 <v-select
                     v-model="sortBy"
                     class="mt-3"
-                    label="Sort by"
-                    :items="['Default', 'Artist', 'Title', 'Likes']"
+                    label="Ordenar por"
+                    :items="['Padrão', 'Artista/Banda', 'Música', 'Likes']"
                 ></v-select>
             </v-card-text>
 
@@ -46,7 +46,7 @@
                     text
                     @click="clearAll"
                 >
-                    Clear All
+                    Limpar tudo
                 </v-btn>
                 <v-btn
                     color="primary"

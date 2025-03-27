@@ -9,7 +9,7 @@
             app
             dense
         >
-            SetMatch
+            {{ name }} ({{ role }})
 
             <v-spacer></v-spacer>
 
@@ -65,6 +65,7 @@ import NewMusic from './NewMusic.vue';
 import SortFilter from './SortFilter.vue';
 import SetList from './SetList.vue';
 import About from './About.vue';
+import { computed } from 'vue';
 
 export default {
     name: 'AppBar',
@@ -75,10 +76,18 @@ export default {
         setList: false,
         about: false
     }),
+    computed: {
+        name() {
+            return this.$store.getters.me.name;
+        },
+        role() {
+            return this.$store.getters.me.role;
+        }
+    },
     methods: {
         update,
         test() {
-            this.$store.commit('alert', { type: 'success', message: 'Music saved' });
+            this.$store.commit('alert', { type: 'success', message: 'Musica salva' });
         }
     }
 }

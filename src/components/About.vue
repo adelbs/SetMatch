@@ -5,15 +5,15 @@
         width="500"
     >
         <v-card :loading="$store.state.loading || $store.state.bgLoading">
-            <v-card-title>About me...</v-card-title>
+            <v-card-title>Sobre mim...</v-card-title>
             <v-card-text>
-                Hi, {{ name }}! My name is Felipe Jacob. 
+                E aí, {{ name }}! Eu sou o Felipe Jacob. 
                 <br><br>
-                I created this app just for fun :) 
-                <br>
-                Hope you enjoy it.
+                Criei esse app por diversão, e também porque não tinha nada melhor pra fazer num certo domingo a noite :)
                 <br><br>
-                If you are nerd like me, you can check out the source code here:
+                Espero que curta!
+                <br><br>
+                Se você é nerd, como eu, pode dar uma olhada no código fonte aqui:
                 <br>
                 <a href="https://github.com/adelbs/SetMatch" target="_blank">https://github.com/adelbs/SetMatch</a>
             </v-card-text>
@@ -26,7 +26,7 @@
                     text
                     @click="show = false"
                 >
-                    Great! You are the best!
+                    Valeu!
                 </v-btn>
             </v-card-actions>
         </v-card>

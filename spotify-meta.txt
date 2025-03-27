@@ -1,0 +1,7 @@
+
+<meta property="og:title" content="Rest In Peace" />
+<meta name="music:musician_description" content="Extreme" />
+<meta property="og:type" content="music.song" />
+<meta property="og:image" content="https://i.scdn.co/image/ab67616d0000b2730ba407cd9b2d529ad228d207" />
+<meta name="music:duration" content="362" />
+

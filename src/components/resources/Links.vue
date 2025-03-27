@@ -5,12 +5,12 @@
         width="500"
     >
         <v-card :loading="$store.state.loading || $store.state.bgLoading">
-            <v-card-title>External Links</v-card-title>
+            <v-card-title>Links</v-card-title>
             <v-card-text>
                 <v-text-field
                     :disabled="$store.state.loading || $store.state.bgLoading"
                     class="mt-3"
-                    label="Label"
+                    label="Titulo"
                     v-model="label"
                     dense
                 ></v-text-field>
@@ -63,7 +63,7 @@
                     text
                     @click="show = false"
                 >
-                    Close
+                    Fechar
                 </v-btn>
             </v-card-actions>
         </v-card>

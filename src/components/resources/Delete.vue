@@ -5,9 +5,9 @@
         width="500"
     >
         <v-card :loading="$store.state.loading || $store.state.bgLoading">
-            <v-card-title>Delete</v-card-title>
+            <v-card-title>Excluir</v-card-title>
             <v-card-text>
-                Are you sure? Don't get carried away by emotion...
+                Tem certeza disso? Não se deixe levar pela emoção, pense bem....
             </v-card-text>
             <v-divider></v-divider>
             <v-card-actions>
@@ -16,7 +16,7 @@
                     text
                     @click="show = false"
                 >
-                    No, it's a mistake
+                    Não, deixa quieto
                 </v-btn>
                 <v-btn
                     :disabled="$store.state.loading || $store.state.bgLoading"
@@ -24,7 +24,7 @@
                     text
                     @click="deleteMusic"
                 >
-                    Yes, delete it!
+                    Sim, deleta essa merda
                 </v-btn>
             </v-card-actions>
         </v-card>
